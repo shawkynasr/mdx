@@ -24,7 +24,7 @@ fn is_text_end(line: &str) -> bool {
 
 impl DataLoader for MDictSourceLoader {
     fn load_data(&mut self, entry: &ZdbRecord) -> Result<Vec<u8>> {
-        let mut data = Vec::<u8>::with_capacity(entry.content_len as usize);
+        let mut data = vec![0u8; entry.content_len as usize];
         self.input_reader.seek(SeekFrom::Start(entry.position))?;
         self.input_reader.read_exact(&mut data)?;
         Ok(data)

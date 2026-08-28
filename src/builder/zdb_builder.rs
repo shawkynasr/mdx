@@ -187,7 +187,7 @@ impl Default for BuilderConfig {
             password: String::new(),
             data_source_format: SourceType::MdictHtml,
             content_type: "Html".to_string(),
-            default_sorting_locale: "root".to_string(),
+            default_sorting_locale: "".to_string(),
             device_id: String::new(),
         }
     }
